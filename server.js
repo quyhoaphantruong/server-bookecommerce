@@ -29,7 +29,8 @@ app.use("/api/image", imageRouter);
 app.use("/api/category", categoryRouter);
 app.use("/api/orders", orderRouter);
 
-app.listen(8000, async () => {
-  connectDB().then(() => {});
-  console.log("Server is listening");
+connectDB().then(() => {
+  app.listen(8000, () => {
+    console.log("connect to DB");
+  });
 });

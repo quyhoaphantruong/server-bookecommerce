@@ -19,6 +19,9 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(errorHandler);
 
+app.get("/", () => {
+  res.send("hello world");
+});
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/products", productRouter);
